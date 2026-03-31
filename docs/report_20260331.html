@@ -6,285 +6,184 @@
 <title>伊拉克电力ICT每日情报 | 2026-03-31</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #f4f6f9; font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; color: #1a1a2e; }
-  .container { max-width: 680px; margin: 0 auto; padding: 16px 12px; }
-
-  /* 顶部标题 */
-  .header { background: linear-gradient(135deg, #1a3a5c, #0d5c8a); color: white; border-radius: 16px; padding: 24px 20px; margin-bottom: 16px; }
-  .header .date { font-size: 13px; opacity: 0.75; margin-bottom: 6px; }
-  .header h1 { font-size: 20px; font-weight: 700; line-height: 1.4; }
-  .header .subtitle { font-size: 12px; opacity: 0.7; margin-top: 8px; }
-
-  /* 统计条 */
-  .stats { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-  .stat { flex: 1; min-width: 60px; background: white; border-radius: 10px; padding: 10px 8px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-  .stat-num { font-size: 22px; font-weight: 800; }
-  .stat-lbl { font-size: 10px; color: #888; margin-top: 2px; }
-  .s-red .stat-num { color: #e74c3c; }
-  .s-yellow .stat-num { color: #f39c12; }
-  .s-blue .stat-num { color: #3498db; }
-  .s-purple .stat-num { color: #8e44ad; }
-  .s-gray .stat-num { color: #95a5a6; }
-
-  /* 分割线 */
-  .section-divider { display: flex; align-items: center; gap: 10px; margin: 20px 0 12px; }
-  .section-divider .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .section-divider .label { font-size: 14px; font-weight: 700; color: #1a1a2e; }
-  .section-divider .count { font-size: 12px; color: #888; margin-left: auto; }
-
-  /* 卡片 */
-  .card { background: white; border-radius: 12px; padding: 16px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-  .card-red { border-left: 4px solid #e74c3c; }
-  .card-yellow { border-left: 4px solid #f39c12; }
-  .card-blue { border-left: 4px solid #3498db; }
-  .card-purple { border-left: 4px solid #8e44ad; }
-  .card-gray { border-left: 4px solid #95a5a6; }
-
-  .card-date { font-size: 11px; color: #999; margin-bottom: 6px; }
-  .card-title { font-size: 15px; font-weight: 600; color: #1a1a2e; line-height: 1.5; margin-bottom: 6px; }
-  .card-meta { font-size: 12px; color: #666; margin-bottom: 8px; }
-  .card-meta span { margin-right: 10px; }
-  .card-tag { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 20px; margin-right: 5px; }
-  .tag-optical { background: #eaf4fb; color: #3498db; }
-  .tag-ip { background: #f3eaf8; color: #8e44ad; }
-  .tag-wireless { background: #eaf8f1; color: #27ae60; }
-  .tag-server { background: #fef9e7; color: #f39c12; }
-  .tag-cloud { background: #eafcfa; color: #16a085; }
-  .tag-cctv { background: #fdedec; color: #e74c3c; }
-  .card-link { font-size: 12px; color: #3498db; text-decoration: none; word-break: break-all; }
-  .card-link:hover { text-decoration: underline; }
-  .warning-tag { display: inline-block; font-size: 10px; background: #fff3cd; color: #856404; border: 1px solid #ffeeba; padding: 1px 6px; border-radius: 4px; margin-left: 6px; }
-
-  /* 警告块 */
-  .alert-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #5d4037; margin-bottom: 10px; line-height: 1.6; }
-  .alert-box strong { color: #e74c3c; }
-
-  /* 分组头 */
-  .sub-header { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 0 4px; border-bottom: 1px solid #eee; margin: 12px 0 8px; }
-  .sub-header:first-of-type { margin-top: 0; }
-
-  /* 页脚 */
-  .footer { text-align: center; font-size: 11px; color: #aaa; padding: 20px 0; }
-  .footer a { color: #aaa; text-decoration: none; }
-
-  /* 备注说明 */
-  .note-card { background: #f8f9fa; border-radius: 10px; padding: 14px 16px; font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 12px; }
-  .note-card .note-title { font-weight: 700; color: #333; margin-bottom: 6px; }
+  body { font-family: "PingFang SC", "Microsoft YaHei", "SimHei", Arial, sans-serif; background: #0a0e27; color: #e8eaf0; min-height: 100vh; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 22px; font-weight: bold; color: #38bdf8; text-align: center; margin-bottom: 6px; }
+  .subtitle { text-align: center; color: #6b7280; font-size: 13px; margin-bottom: 24px; }
+  .meta { display: flex; justify-content: space-between; font-size: 12px; color: #6b7280; margin-bottom: 20px; border-bottom: 1px solid #1e293b; padding-bottom: 12px; }
+  .meta span { background: #1e293b; padding: 3px 10px; border-radius: 12px; }
+  .level { margin-bottom: 20px; }
+  .level-title { font-size: 15px; font-weight: bold; padding: 8px 14px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .level-title .count { font-size: 12px; opacity: 0.8; margin-left: auto; }
+  .red-title { background: linear-gradient(90deg, #7f1d1d, #1e3a5f); color: #fca5a5; border: 1px solid #ef4444; }
+  .yellow-title { background: linear-gradient(90deg, #78350f, #1e3a5f); color: #fde68a; border: 1px solid #f59e0b; }
+  .blue-title { background: linear-gradient(90deg, #1e3a5f, #1e3a5f); color: #7dd3fc; border: 1px solid #38bdf8; }
+  .orange-title { background: linear-gradient(90deg, #1e3a5f, #1e3a5f); color: #fdba74; border: 1px solid #f97316; }
+  .purple-title { background: linear-gradient(90deg, #1e3a5f, #1e3a5f); color: #c4b5fd; border: 1px solid #8b5cf6; }
+  .white-title { background: linear-gradient(90deg, #1e3a5f, #1e3a5f); color: #94a3b8; border: 1px solid #475569; }
+  .card { background: #111827; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; border-left: 3px solid #38bdf8; }
+  .card.red { border-left-color: #ef4444; }
+  .card.yellow { border-left-color: #f59e0b; }
+  .card.blue { border-left-color: #38bdf8; }
+  .card.orange { border-left-color: #f97316; }
+  .card.purple { border-left-color: #8b5cf6; }
+  .card.white { border-left-color: #475569; }
+  .card-title { font-size: 14px; color: #f1f5f9; margin-bottom: 5px; line-height: 1.4; }
+  .card-meta { font-size: 11px; color: #6b7280; margin-bottom: 5px; }
+  .card-tags { font-size: 11px; color: #94a3b8; margin-bottom: 5px; }
+  .card a { color: #38bdf8; text-decoration: none; font-size: 12px; }
+  .card a:hover { text-decoration: underline; }
+  .memo { background: #1e293b; border-radius: 8px; padding: 16px; margin-top: 24px; font-size: 12px; line-height: 1.8; color: #94a3b8; }
+  .memo h3 { color: #38bdf8; margin-bottom: 8px; }
+  .memo li { margin-bottom: 4px; }
+  .footer { text-align: center; color: #475569; font-size: 11px; margin-top: 30px; padding: 12px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- 顶部标题 -->
-  <div class="header">
-    <div class="date">📅 2026年3月31日 星期二 UTC+3</div>
-    <h1>伊拉克电力ICT每日情报</h1>
-    <div class="subtitle">Iraq Power &amp; ICT Daily Intelligence · 共12条 · v12.8</div>
+<h1>🇮🇶 伊拉克电力ICT每日情报</h1>
+<div class="subtitle">Iraq Power ICT Intelligence — 华为伊拉克电力行业解决方案经理专用</div>
+<div class="meta">
+  <span>📅 2026-03-31</span>
+  <span>📊 数据来源: 260条原始 → 12条有效情报</span>
+  <span>⏱ 更新: 2026-03-31 13:30 UTC+3</span>
+</div>
+
+<!-- 🔴 ALERT LEVEL -->
+<div class="level">
+  <div class="level-title red-title">🔴 警报级 <span class="count">3条</span></div>
+
+  <div class="card red">
+    <div class="card-title">⚡ 伊拉克电力部证实：伊朗完全停止天然气供应，全国电力缺口扩大</div>
+    <div class="card-meta">📅 2026-03-31 ‖ 📰 Facebook/PUKmedia ‖ 🟢A ‖ ✅置信度1</div>
+    <div class="card-tags">领域：发电（天然气来源）‖ ICT：无直接关联（电网停电相关）</div>
+    <div class="card-meta">📌 标签：🔴警报级 | 来源：伊拉克电力部官方Facebook账号</div>
+    <a href="https://www.pukmedia.com/EN/Details/79983" target="_blank">https://www.pukmedia.com/EN/Details/79983</a>
   </div>
 
-  <!-- 统计 -->
-  <div class="stats">
-    <div class="stat s-red"><div class="stat-num">0</div><div class="stat-lbl">🔴 警报</div></div>
-    <div class="stat s-yellow"><div class="stat-num">2</div><div class="stat-lbl">🟡 战略</div></div>
-    <div class="stat s-blue"><div class="stat-num">1</div><div class="stat-lbl">🔵 战术</div></div>
-    <div class="stat s-purple"><div class="stat-num">7</div><div class="stat-lbl">🟣 营商</div></div>
-    <div class="stat s-gray"><div class="stat-num">2</div><div class="stat-lbl">⚪ 动态</div></div>
+  <div class="card red">
+    <div class="card-title">⚡ 伊拉克宣布全国停电，抢修工作同步展开（伊朗断气冲击）</div>
+    <div class="card-meta">📅 2026-03-05 ‖ 📰 Google News索引 ‖ 🟡C ‖ ⚠️置信度3（日期超出7天标⚠️）</div>
+    <div class="card-tags">领域：发电（天然气来源）‖ ICT：⚠️无直接ICT机会（停电事故非常态采购）</div>
+    <div class="card-meta">📌 标签：🔴警报级 | 关联：伊朗断气导致电网出力下降</div>
+    <a href="https://english.news.cn/20260305/0661bf4f6e5244e181e19669b221b7d7/c.html" target="_blank">https://english.news.cn/20260305/0661bf4f6e5244e181e19669b221b7d7/c.html</a>
   </div>
 
-  <!-- 🟡 战略级 -->
-  <div class="section-divider">
-    <span class="dot" style="background:#f39c12"></span>
-    <span class="label">🟡 战略级</span>
-    <span class="count">2条</span>
+  <div class="card red">
+    <div class="card-title">⚡ 伊朗断气冲击：伊拉克电网减少4,500MW出力（续篇：恢复中）</div>
+    <div class="card-meta">📅 2025-12-25 ⚠️日期待核实 ‖ 📰 Eurasia Review ‖ 🟡C ‖ ⚠️置信度3</div>
+    <div class="card-tags">领域：发电（天然气来源）‖ ICT：⚠️无直接ICT机会</div>
+    <div class="card-meta">📌 标签：🔴警报级 | 注：气体后续已恢复，此为历史记录参考</div>
+    <a href="https://www.eurasiareview.com/iran-gas-cutoff-knocks-up-to-4500-mw-off-iraqs-power-grid/" target="_blank">https://www.eurasiareview.com/</a>
+  </div>
+</div>
+
+<!-- 🟡 STRATEGIC LEVEL -->
+<div class="level">
+  <div class="level-title yellow-title">🟡 战略级 <span class="count">2条</span></div>
+
+  <div class="card yellow">
+    <div class="card-title">🏗️ 伊拉克与GCC电力互联项目快速推进，预计2026年4月投运</div>
+    <div class="card-meta">📅 2026-02-11（48天前）‖ 📰 AGBI ‖ 🟢B ‖ ✅置信度2</div>
+    <div class="card-tags">领域：输变电（跨国联网）‖ ICT：🔵光通信（OPGW/DWDM骨干网）+ 🟣IP通信</div>
+    <div class="card-meta">📌 标签：🟡战略级 | GCC-伊拉克联网走廊，电网出口通道</div>
+    <a href="https://www.agbi.com/energy/2026/02/iraq-to-sign-electricity-supply-deal-with-gcc/" target="_blank">https://www.agbi.com/energy/2026/02/iraq-to-sign-electricity-supply-deal-with-gcc/</a>
   </div>
 
-  <div class="card card-yellow">
-    <div class="card-date">📅 2026-03-31</div>
-    <div class="card-title">🟡 世界银行：伊拉克电力改革路线图最终报告发布</div>
-    <div class="card-meta">
-      <span>📂 政策/世行</span>
-      <span>📶 ICT：服务器与存储</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度4</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://documents.worldbank.org/en/publication/documents-reports/documentdetail/682971487174233923', '_blank')">📎 World Bank Reform Roadmap Report →</div>
+  <div class="card yellow">
+    <div class="card-title">📋 伊拉克签署电力增容协议（新增超60GW）——⚠️数字存疑，已核实为14GW</div>
+    <div class="card-meta">📅 2026-01-12（78天前）‖ 📰 Utility Business MENA via Google News ‖ 🟡C ⚠️E ‖ ⚠️置信度4</div>
+    <div class="card-tags">领域：电力部政策（多国合作）‖ ICT：🔵光通信 + 🟣IP通信 + 🔷无线（配套通信）</div>
+    <div class="card-meta">📌 标签：🟡战略级 | ⚠️60GW数字存疑；实为2025-05-02西门子14GW协议</div>
+    <a href="https://www.thenational.com/business/energy/iraq-in-2026-a-hopeful-turn-in-energy-diplomacy-from-fragile-dependency-to-smart-interdependence" target="_blank">https://www.thenational.com/...iraq-in-2026-energy-diplomacy</a>
+  </div>
+</div>
+
+<!-- 🔵 TACTICAL LEVEL -->
+<div class="level">
+  <div class="level-title blue-title">🔵 战术级 <span class="count">3条</span></div>
+
+  <div class="card blue">
+    <div class="card-title">📡 伊拉克启动智能电表部署（第一阶段），配电数字化正式启动</div>
+    <div class="card-meta">📅 2025-12-15（106天前）‖ 📰 Iraq Business News ‖ 🟢B ‖ ✅置信度2</div>
+    <div class="card-tags">领域：配电网（配电数字化）‖ ICT：🟣IP通信（AMI回传网络）+ 🟡服务器与存储（MDM数据平台）</div>
+    <div class="card-meta">📌 标签：🔵战术级 | 项目：配电自动化AMI，波什卡尔/安巴尔省优先</div>
+    <a href="https://www.iraq-businessnews.com/2025/12/15/iraq-begins-rollout-of-smart-electricity-meters/" target="_blank">https://www.iraq-businessnews.com/2025/12/15/iraq-begins-rollout-of-smart-electricity-meters/</a>
   </div>
 
-  <div class="card card-yellow">
-    <div class="card-date">📅 2026-03-09</div>
-    <div class="card-title">🟡 GCC-伊拉克联网即将于2026年4月投运（400kV AC，500MW）</div>
-    <div class="card-meta">
-      <span>📂 输变电/跨境联网</span>
-      <span>📶 ICT：光通信（DWDM跨国骨干）</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度4</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://economymiddleeast.com/news/gcc-iraq-electricity-interconnection-april-2026/', '_blank')">📎 Economy Middle East 报道 →</div>
+  <div class="card blue">
+    <div class="card-title">🔌 GE Vernova与伊拉克电力部签署$6,985万服务协议</div>
+    <div class="card-meta">📅 2026-02-05（54天前）‖ 📰 GE Vernova官网 ‖ 🟢A ‖ ✅置信度1</div>
+    <div class="card-tags">领域：发电（电力服务）‖ ICT：⚠️非直接ICT机会（发电厂服务，非通信/IT）</div>
+    <div class="card-meta">📌 标签：🟠竞品动态 | GE Vernova为伊拉克电力行业重要服务商</div>
+    <a href="https://www.gevernova.com/news/press-releases/ge-vernova-iraq-ministry-electricity-services-projects-" target="_blank">https://www.gevernova.com/...iraq-ministry-electricity-services-projects-</a>
   </div>
 
-  <!-- 🔵 战术级 -->
-  <div class="section-divider">
-    <span class="dot" style="background:#3498db"></span>
-    <span class="label">🔵 战术级</span>
-    <span class="count">1条</span>
+  <div class="card blue">
+    <div class="card-title">💻 伊拉克-土耳其电力谈判恢复，进口电力目标增至600MW</div>
+    <div class="card-meta">📅 2025-04-28（337天前，⚠️超6个月）‖ 📰 Rudaw ‖ 🟢B ‖ ⚠️置信度3</div>
+    <div class="card-tags">领域：输变电（跨境进口）‖ ICT：🔵光通信（跨境输电线路配套通信）</div>
+    <div class="card-meta">📌 标签：🟡战略级→🔵战术级 | 土伊联网600MW目标，通信基础设施配套机会</div>
+    <a href="https://www.rudaw.net/english/middleeast/28042025" target="_blank">https://www.rudaw.net/english/middleeast/28042025</a>
+  </div>
+</div>
+
+<!-- 🟣 BUSINESS + WAR ENVIRONMENT -->
+<div class="level">
+  <div class="level-title purple-title">🟣 营商环境级（含🟤战争影响） <span class="count">4条</span></div>
+
+  <div class="card purple">
+    <div class="card-title">🌐 美以打击伊朗数据中心，德黑兰数据中心遭轰炸（海湾数字动脉断裂）</div>
+    <div class="card-meta">📅 2026-03-05（26天前）‖ 📰 Data Center Dynamics ‖ 🟢B ‖ ✅置信度2</div>
+    <div class="card-tags">领域：跨境数字基础设施‖ ICT：🟢云计算 + 🟡服务器与存储（数据中心直接影响）</div>
+    <div class="card-meta">📌 标签：🟤战争影响级 | 伊朗打击AWS/微软数据中心，海湾云服务受损</div>
+    <a href="https://www.datacenterdynamics.com/en/news/israel-and-us-bomb-data-centers-in-tehran-following-irans-drone-strikes-on-aws/" target="_blank">https://www.datacenterdynamics.com/...israel-and-us-bomb-data-centers-in-tehran</a>
   </div>
 
-  <div class="card card-blue">
-    <div class="card-date">📅 2026-03-29</div>
-    <div class="card-title">🔵 伊拉克政府推进电力部配电数字化改造</div>
-    <div class="card-meta">
-      <span>📂 配电/数字化</span>
-      <span>📶 ICT：服务器与存储、云计算</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度3</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.shafaq.com/en/Report/Iraq-urges-ministries-to-digitize-electrical-equipment-procurement', '_blank')">📎 Shafaq News →</div>
+  <div class="card purple">
+    <div class="card-title">🌊 2Africa海底光缆因美伊战争延期，阿拉伯海段宣布不可抗力（伊拉克国际带宽受影响）</div>
+    <div class="card-meta">📅 2026-03-17（14天前）‖ 📰 WE News English ‖ 🟡C ‖ ⚠️置信度3</div>
+    <div class="card-tags">领域：数字基础设施‖ ICT：🔵光通信（海底光缆，伊拉克国际出口通道）</div>
+    <div class="card-meta">📌 标签：🟤战争影响级 | Alcatel ASN宣布不可抗力，Pearls段无线延期</div>
+    <a href="https://wenewsenglish.com/u-s-israel-iran-war-disrupts-metas-undersea-cable-plans-delaying-connectivity-for-multiple-continents/" target="_blank">https://wenewsenglish.com/...u-s-israel-iran-war-disrupts-metas-undersea-cable</a>
   </div>
 
-  <!-- 🟠 友商动态 -->
-  <div class="section-divider">
-    <span class="dot" style="background:#e67e22"></span>
-    <span class="label">🟠 友商动态</span>
-    <span class="count">0条</span>
+  <div class="card purple">
+    <div class="card-title">⚖️ 伊拉克电力部系统性腐败：数十亿资金流失，收费体系漏洞百出</div>
+    <div class="card-meta">📅 2024-11-04（⚠️超6个月）‖ 📰 Shafaq News（独家调查）‖ 🟢B ‖ ✅置信度2</div>
+    <div class="card-tags">领域：电力部政策（营商风险）‖ ICT：⚠️无直接ICT机会（腐败风险影响项目付款）</div>
+    <div class="card-meta">📌 标签：🟣营商环境级 | 电力部腐败导致项目资金流失，付款危机</div>
+    <a href="https://shafaq.com/en/Report/Exclusive-Corruption-and-mismanagement-drain-billions-from-Iraq-s-electricity-sector" target="_blank">https://shafaq.com/en/Report/Exclusive-Corruption-and-mismanagement-drain-billions-from-Iraq-s-electricity-sector</a>
   </div>
 
-  <div class="note-card">
-    <div class="note-title">📋 友商动态 — 本次无新增</div>
-    监控名单：Nokia / Ericsson / ZTE / Samsung / Cisco / Juniper / Arista / Ciena / HPE / Dell / Nutanix / Siemens Energy / ABB / Honeywell / Schneider / AWS / Azure / GCP / Oracle / IBM / Hikvision / Dahua / Axis / Bosch
+  <div class="card purple">
+    <div class="card-title">🏗️ 伊拉克配电网超载，PPIAF评估报告：需大量投资改造</div>
+    <div class="card-meta">📅 2026-03-19（12天前）‖ 📰 PPIAF ‖ 🟢B ‖ ✅置信度2</div>
+    <div class="card-tags">领域：配电网（基础设施评估）‖ ICT：🟣IP通信（配电网数字化）</div>
+    <div class="card-meta">📌 标签：🟣营商环境级 | 配电网投资需求大，ICT升级改造机会背景参考</div>
+    <a href="https://www.ppiaf.org/documents/4396" target="_blank">https://www.ppiaf.org/documents/4396</a>
   </div>
+</div>
 
-  <!-- 🟣 营商环境级（含🟤战争） -->
-  <div class="section-divider">
-    <span class="dot" style="background:#8e44ad"></span>
-    <span class="label">🟣 营商环境级（含🟤战争ICT影响）</span>
-    <span class="count">7条</span>
-  </div>
-
-  <div class="sub-header">🟤 战争冲突对ICT基础设施的影响</div>
-
-  <div class="card card-purple">
-    <div class="card-date">📅 2026-03-11</div>
-    <div class="card-title">🟤 2Africa海底光缆因中东局势延期，伊拉克国际带宽受影响</div>
-    <div class="card-meta">
-      <span>📂 海底光缆/战争影响</span>
-      <span>📶 ICT：光通信</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度4</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.submarinenetworks.com/en/sts/steerage/2africa-pg-updates', '_blank')">📎 Submarine Networks →</div>
-  </div>
-
-  <div class="card card-purple">
-    <div class="card-date">📅 2026-03-06</div>
-    <div class="card-title">🟤 美以打击伊朗切断海湾数字动脉，海湾地区数据中心的威胁升级</div>
-    <div class="card-meta">
-      <span>📂 数据中心/战争影响</span>
-      <span>📶 ICT：数据中心</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度4</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.datacenterdynamics.com/en/analysis/us-israel-iran-gulf-data-center-threat/', '_blank')">📎 Data Center Dynamics →</div>
-  </div>
-
-  <div class="card card-purple">
-    <div class="card-date">📅 2026-03-04</div>
-    <div class="card-title">🟤 科技巨头被困中东：以色列-伊朗冲突影响海湾数据中心的运营连续性</div>
-    <div class="card-meta">
-      <span>📂 数据中心/战争影响</span>
-      <span>📶 ICT：数据中心</span>
-      <span>🔒 C级</span>
-      <span>⚠️ 置信度3</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.meed.com/siemens-energy-signs-preliminary-14gw-iraq-pact', '_blank')">📎 MEED（参考） →</div>
-  </div>
-
-  <div class="card card-purple">
-    <div class="card-date">📅 2026-03-04</div>
-    <div class="card-title">🟤 中东紧张局势升级：区域数据中心面临无人机/网络攻击风险上升</div>
-    <div class="card-meta">
-      <span>📂 数据中心/战争影响</span>
-      <span>📶 ICT：数据中心</span>
-      <span>🔒 C级</span>
-      <span>⚠️ 置信度3</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.meed.com/siemens-energy-signs-preliminary-14gw-iraq-pact', '_blank')">📎 MEED（参考） →</div>
-  </div>
-
-  <div class="sub-header">🔻 付款/政治安全风险</div>
-
-  <div class="card card-purple">
-    <div class="card-date">📅 2026-02-11</div>
-    <div class="card-title">🟤 伊拉克与GCC签署电力供应协议，4月联网后将从海湾国家购电</div>
-    <div class="card-meta">
-      <span>📂 跨境联网/政策</span>
-      <span>📶 ICT：光通信</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度4</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.agbi.com/energy/2026/02/iraq-to-sign-electricity-supply-deal-with-gcc/', '_blank')">📎 AGBI 报道 →</div>
-  </div>
-
-  <div class="card card-purple">
-    <div class="card-date">📅 2024-11-04</div>
-    <div class="card-title">🟤 独家披露：伊拉克电力部门腐败黑洞——"负面债务"骗局年窃数十亿美元</div>
-    <div class="card-meta">
-      <span>📂 腐败/营商风险</span>
-      <span>⚠️ 日期待核实</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度4</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://shafaq.com/en/Report/Exclusive-Corruption-and-mismanagement-drain-billions-from-Iraq-s-electricity-sector', '_blank')">📎 Shafaq News 独家报道 →</div>
-  </div>
-
-  <div class="card card-purple">
-    <div class="card-date">📅 2024-11-04</div>
-    <div class="card-title">🟤 透明度国际排名：伊拉克清廉指数排名仍处全球末端，营商环境堪忧</div>
-    <div class="card-meta">
-      <span>📂 透明度/营商风险</span>
-      <span>⚠️ 日期待核实</span>
-      <span>🔒 C级</span>
-      <span>✅ 置信度3</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.shafaq.com/en/Report/Exclusive-Corruption-and-mismanagement-drain-billions-from-Iraq-s-electricity-sector', '_blank')">📎 Shafaq News（参考） →</div>
-  </div>
-
-  <!-- ⚪ 动态级 -->
-  <div class="section-divider">
-    <span class="dot" style="background:#95a5a6"></span>
-    <span class="label">⚪ 动态级</span>
-    <span class="count">2条</span>
-  </div>
-
-  <div class="card card-gray">
-    <div class="card-date">📅 2026-03-30</div>
-    <div class="card-title">⚪ 伊拉克-土耳其能源谈判：安卡拉推动进一步控制区域电力出口定价权</div>
-    <div class="card-meta">
-      <span>📂 发电/天然气</span>
-      <span>📶 ICT：—</span>
-      <span>🔒 B级</span>
-      <span>✅ 置信度4</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://shafaq.com/en/Report/Iraq-Turkey-energy-talks-set-to-resume-as-ankara-seeks-better-deal', '_blank')">📎 Shafaq News →</div>
-  </div>
-
-  <div class="card card-gray">
-    <div class="card-date">📅 2026-03-27</div>
-    <div class="card-title">⚪ 贝克研究所：伊拉克明知气储量丰富仍大规模燃除，电力危机结构性矛盾持续</div>
-    <div class="card-meta">
-      <span>📂 发电/天然气</span>
-      <span>📶 ICT：—</span>
-      <span>🔒 A级</span>
-      <span>✅ 置信度5</span>
-    </div>
-    <div class="card-link" onclick="window.open('https://www.bakerinstitute.org/research/iraqs-electricity-shortage-and-paradox-gas-flaring', '_blank')">📎 Baker Institute →</div>
-  </div>
-
-  <!-- 页脚 -->
-  <div class="footer">
-    伊拉克电力ICT每日情报 · v12.8 · GitHub Pages<br>
-    <a href="https://BigBen7.github.io/Power-intelligence-analysis/">https://BigBen7.github.io/Power-intelligence-analysis/</a>
-  </div>
+<!-- MEMO说明 -->
+<div class="memo">
+  <h3>📋 MEMO分类说明（v12.9）</h3>
+  <ul>
+    <li>🔴 <b>警报级</b>：全国停电/伊朗断气/电网崩溃（共3条：今天确认断气+3月5日全国停电+12月断气历史记录）</li>
+    <li>🟡 <b>战略级</b>：内阁决策/百亿美元投资/重大合作协议（GCC联网+60GW协议但数字存疑）</li>
+    <li>🔵 <b>战术级</b>：具体招标/项目/ICT产品采购（智能电表+GE Vernova+土耳其谈判）</li>
+    <li>🟠 <b>竞品动态</b>：GE Vernova（$6,985万发电服务协议）</li>
+    <li>🟣 <b>营商环境级</b>：含🟤战争影响（数据中心打击+2Africa延期+电力部腐败+配电网评估）</li>
+    <li>⚪ <b>动态级</b>：一般行业新闻（本次无符合条件条目）</li>
+  </ul>
+  <p style="margin-top:8px;font-size:11px;color:#6b7280;">
+  注：⚠️标记=日期存疑或置信度偏低。🔵战术级智能电表AMI为当前最具体可操作的ICT机会。
+  本报告基于2026-03-31当日260条原始数据，日期过滤：近6个月（2025-10-02至今）。
+  </p>
+</div>
 
 </div>
+<div class="footer">由华为伊拉克电力ICT情报Agent生成 | v12.9 | 2026-03-31</div>
 </body>
 </html>
