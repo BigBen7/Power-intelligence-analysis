@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+<title>伊拉克电力ICT每日情报 | 2026-03-31</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 12px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a5f7a, #0d3d56);
+    color: white;
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .header .date {
+    font-size: 13px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+  }
+  .header .title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 6px 0;
+    letter-spacing: 2px;
+  }
+  .header .ver {
+    font-size: 11px;
+    opacity: 0.65;
+  }
+  .stats-bar {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    border-radius: 10px;
+    padding: 12px 8px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .stat-item {
+    text-align: center;
+    min-width: 50px;
+  }
+  .stat-num {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: #888;
+    margin-top: 1px;
+  }
+  .section {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .section-head {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-head .emoji {
+    font-size: 18px;
+  }
+  .section-head .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 10px;
+    opacity: 0.85;
+  }
+  .section-body {
+    padding: 0 16px 14px;
+  }
+  /* 警报级 */
+  .level-red .section-head { background: #fff1f1; color: #c0392b; }
+  .level-red .tag { background: #fde8e8; color: #c0392b; }
+  /* 战略级 */
+  .level-yellow .section-head { background: #fffbeb; color: #b45309; }
+  .level-yellow .tag { background: #fef3c7; color: #b45309; }
+  /* 战术级 */
+  .level-blue .section-head { background: #eff6ff; color: #1d4ed8; }
+  .level-blue .tag { background: #dbeafe; color: #1d4ed8; }
+  /* 友商级 */
+  .level-orange .section-head { background: #fff7ed; color: #c2410c; }
+  .level-orange .tag { background: #ffedd5; color: #c2410c; }
+  /* 战争级 */
+  .level-war .section-head { background: #f5f3ff; color: #5b21b6; }
+  .level-war .tag { background: #ede9fe; color: #5b21b6; }
+  /* 营商级 */
+  .level-biz .section-head { background: #fdf4ff; color: #7e22ce; }
+  .level-biz .tag { background: #f3e8ff; color: #7e22ce; }
+  /* 动态级 */
+  .level-gray .section-head { background: #f9f9f9; color: #555; }
+  .level-gray .tag { background: #eaeaea; color: #666; }
+
+  .item {
+    padding: 11px 0;
+    border-top: 1px solid #f0f0f0;
+  }
+  .item:first-child { border-top: none; }
+  .item-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+  .item-meta {
+    font-size: 11.5px;
+    color: #888;
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .meta-domain, .meta-ict, .meta-level {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  .meta-domain { background: #e8f4f8; color: #1a5f7a; }
+  .meta-ict { background: #f0f0f0; color: #555; }
+  .item-link {
+    font-size: 12px;
+    color: #1a5f7a;
+    text-decoration: none;
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .item-link:active { color: #0d3d56; }
+  .item-note {
+    font-size: 12px;
+    color: #d97706;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    padding: 5px 9px;
+    border-radius: 0 5px 5px 0;
+    margin-top: 5px;
+  }
+  .risk-high { color: #c0392b; font-weight: 700; }
+  .risk-med  { color: #d97706; font-weight: 600; }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #aaa;
+    padding: 14px 0 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="date">2026年3月31日 · 星期二</div>
+  <div class="title">🇮🇶 伊拉克电力ICT每日情报</div>
+  <div class="ver">v12.7 · 七级情报体系 · 260条原始数据</div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num" style="color:#c0392b">2</div><div class="stat-label">🔴 警报</div></div>
+  <div class="stat-item"><div class="stat-num" style="color:#b45309">2</div><div class="stat-label">🟡 战略</div></div>
+  <div class="stat-item"><div class="stat-num" style="color:#1d4ed8">0</div><div class="stat-label">🔵 战术</div></div>
+  <div class="stat-item"><div class="stat-num" style="color:#c2410c">2</div><div class="stat-label">🟠 友商</div></div>
+  <div class="stat-item"><div class="stat-num" style="color:#5b21b6">4</div><div class="stat-label">🟤 战争</div></div>
+  <div class="stat-item"><div class="stat-num" style="color:#7e22ce">3</div><div class="stat-label">🟣 营商</div></div>
+  <div class="stat-item"><div class="stat-num" style="color:#666">3</div><div class="stat-label">⚪ 动态</div></div>
+</div>
+
+<!-- 🔴 警报级 -->
+<div class="section level-red">
+  <div class="section-head">
+    <span class="emoji">🔴</span> 警报级
+    <span class="tag">全国停电 · 立即关注</span>
+  </div>
+  <div class="section-body">
+
+    <div class="item">
+      <div class="item-title">⚠️ 伊拉克宣布全国停电（2026-03-05）</div>
+      <div class="item-meta">
+        <span class="meta-domain">发电</span>
+        <span class="meta-level">🅱️级 / 置信度1</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMisgFBVV95cUxQMnFTR2lRMDlmWGZWSkp4cnpZSkR1bXFsN3RRT1h5aTBpSEV5dVN3X3J2MjVBY0pBPT0?oc=5'">🔗 https://news.google.com/rss/articles/…</div>
+      <div class="item-note">⚠️ 附：伊朗天然气供应已全面暂停（2026-03-31，今晨已报）——本次停电可能与伊朗气站因欠款停供直接相关</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🟡 战略级 -->
+<div class="section level-yellow">
+  <div class="section-head">
+    <span class="emoji">🟡</span> 战略级
+    <span class="tag">政策 · 大型项目 · 60亿美元+</span>
+  </div>
+  <div class="section-body">
+
+    <div class="item">
+      <div class="item-title">GCC-伊拉克电网互联快速推进（2026-02-11）</div>
+      <div class="item-meta">
+        <span class="meta-domain">输变电</span>
+        <span class="meta-ict">ICT：🔵光通信（跨境骨干网）</span>
+        <span class="meta-level">🅱️级 / 置信度1</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMiogFBVV95cUxNTXh3RldOU082VkdCMm9TSVNiUXQxZWc0NGNQemVDUG00R193SVZweTlHaWxpcmprS2xtTkNiX1ZnYW1xZEMxN1A4Z0lqSnFnLXdLREZxSjhwS2E2bXJ1N2pqVkNMNVlYLXVNczZzVS1oYXMwaExldEo2YXlwcERYM0M0TDgwaXl0SVFlT3ExOW9ua3dsSkE1WWluYk13YjdYY2c?oc=5'">🔗 https://news.google.com/rss/articles/…</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">伊拉克签署60GW电力容量协议（2026-01-12）</div>
+      <div class="item-meta">
+        <span class="meta-domain">发电</span>
+        <span class="meta-level">🅱️级 / 置信度1</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMic0FVX3lxTE1hSTBwQmQtZWlhVDRnSjN2Y3JmMGI3WkVWVkx1aGFnSVV5c0hIc1I3V2hJakM3bGczVzk1X1VVdWowbzFTY0dPQUZxbXFBMU53V0RDSUs0OHd5MWN1X2NHTURjZFVpYUlLRF9RQWh3SkFGSUk?oc=5'">🔗 https://news.google.com/rss/articles/…</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🟤 战争影响级 -->
+<div class="section level-war">
+  <div class="section-head">
+    <span class="emoji">🟤</span> 战争影响级
+    <span class="tag">冲突影响ICT基础设施</span>
+  </div>
+  <div class="section-body">
+
+    <div class="item">
+      <div class="item-title">⚠️ 伊朗战争延误Meta 2Africa海底光缆工程（2026-03-14）</div>
+      <div class="item-meta">
+        <span class="meta-domain">输变电</span>
+        <span class="meta-ict">ICT：🔵光通信（国际骨干海缆）</span>
+        <span class="meta-level">🅲级 / 置信度2</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMifEFVX3lxTE95c3lWRGtoUmFMNjZmbzQzRnBEVVRqMEFDWDBIaGx5VEZXalBnUmZlak9PcnYzaF9xd0FVTzBLMXpRQ1lZQVF2bDVNclkxNW5HUzZCNC16OUVUdF9Xcy1GSGVOdUlNNWZTUWtGdkxYSFF4U0w4ZUM1SGNJdkpsQUZBYUJRYnNuR3hsUjM?oc=5'">🔗 Data Center Dynamics</div>
+      <div class="item-note">⚠️ 2Africa是伊拉克连接欧洲/非洲的主干国际海缆，延误将制约伊拉克国际带宽扩容，直接影响华为数据中心骨干业务</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">伊朗战争切断海湾数字动脉（2026-03-15）</div>
+      <div class="item-meta">
+        <span class="meta-domain">电力ICT基础设施</span>
+        <span class="meta-ict">ICT：🔵光通信🔥 + 🟢云计算🔥</span>
+        <span class="meta-level">🅲级 / 置信度2</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMihgFBVV95cUxNaHNfSl9zR0xqWnN2cU9YVTV5QjR2OGE5T2pRZz0?oc=5'">🔗 Rest of World</div>
+      <div class="item-note">⚠️ 伊拉克位于区域网络关键节点，战事直接影响其国际连接和数据中心扩张计划</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">美以战争威胁海湾数据中心增长（2026-03-16）</div>
+      <div class="item-meta">
+        <span class="meta-domain">电力ICT基础设施</span>
+        <span class="meta-ict">ICT：🟢云计算🔥（数据中心）</span>
+        <span class="meta-level">🅲级 / 置信度2</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMiqwFBVV95cUxNaFVyYVZFS19zR0xqWnN2cU9YVTV5QjR2OGE5T2pRZz0?oc=5'">🔗 Al Hurra</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">海湾科技巨头项目困于两战争要道（2026-03-04）</div>
+      <div class="item-meta">
+        <span class="meta-domain">ICT基础设施</span>
+        <span class="meta-ict">ICT：🔵光通信 + 🟢云计算</span>
+        <span class="meta-level">🅲级 / 置信度2</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMihgFBVV95cUxNaHNfSl9zR0xqWnN2cU9YVTV5QjR2OGE5T2pRZz0?oc=5'">🔗 Rest of World</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🟠 友商动态 -->
+<div class="section level-orange">
+  <div class="section-head">
+    <span class="emoji">🟠</span> 友商动态
+    <span class="tag">Nokia · 西门子能源 · Ericsson · ZTE</span>
+  </div>
+  <div class="section-body">
+
+    <div class="item">
+      <div class="item-title">🏭 西门子能源接待伊拉克电力部官员（2025-12-01）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+        <span style="color:#d97706;font-size:11px;font-weight:600;">友商：Siemens Energy</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMijAFBVV95cUxNVzAxRUNLUkh5SjQ3R3lZSEdGTVF6M0FGRlZITU44d1p5VXJCNDhsX0Q4Q2dudzA1dw?oc=5'">🔗 Iraqi News</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">🏭 西门子能源赢得伊拉克5个变电站合同（2023-12-07）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+        <span style="color:#d97706;font-size:11px;font-weight:600;">友商：Siemens Energy</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMimAFBVV95cUxQNGhhdURLUkh5SjQ3R3lZSEdGTVF6M0FGRlZITU44d1p5VXJCNDhsX0Q4Q2dudzA1dw?oc=5'">🔗 Transformers Magazine</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🟣 营商环境级 -->
+<div class="section level-biz">
+  <div class="section-head">
+    <span class="emoji">🟣</span> 营商环境级
+    <span class="tag">付款拖欠 · 政治安全风险</span>
+  </div>
+  <div class="section-body">
+
+    <div class="item">
+      <div class="item-title">🔴 土耳其加强对伊拉克能源命脉控制（2025-09-18）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+        <span class="risk-high">风险：🔴 高</span>
+      </div>
+      <div class="item-note">⚠️ 土耳其收紧对伊拉克天然气/电力供应线控制，供应可靠性风险极高，直接影响华为参与伊拉克电力项目的地缘政治风险评估</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">🔴 伊拉克电力部腐败和管理不善问题持续（2024-11-04）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+        <span class="risk-high">风险：🔴 高</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMipgFBVV95cUxNZz09?oc=5'">🔗 Shafaq News</div>
+      <div class="item-note">⚠️ 电力部腐败直接增加ICT项目交易成本，影响公平竞争，华为需充分评估风险溢价</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">🟡 伊拉克透明度排名上升但腐败挑战仍存（2026-02-10）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+        <span class="risk-med">风险：🟡 中</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMipgFBVV95cUxNZz09?oc=5'">🔗 Middle East Eye</div>
+      <div class="item-note">⚠️ 电力部付款危机影响项目可行性，华为在投标决策时应将欠款周期纳入商务模型</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ⚪ 动态级 -->
+<div class="section level-gray">
+  <div class="section-head">
+    <span class="emoji">⚪</span> 动态级
+    <span class="tag">行业动态 · 参考信息</span>
+  </div>
+  <div class="section-body">
+
+    <div class="item">
+      <div class="item-title">G7部长讨论中东战争对能源价格冲击（2026-03-30）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://www.iraqinews.com/business/g7-ministers-tackle-economic-fallout-of-mideast-war/'">🔗 Iraqinews.com</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">伊拉克浮动发电厂计划缓解电力危机（2025-08-20）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMisAFBVV95cUxNVzlqbmRTSEdBY0x3X19LMXZJUG5mNEZqY0E9PTo?oc=5'">🔗 Bloomberg</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Iraq and Iran electricity and gas dependencies（深度分析）</div>
+      <div class="item-meta">
+        <span class="meta-level">🅲级 / 置信度2</span>
+      </div>
+      <div class="item-link" onclick="location.href='https://news.google.com/rss/articles/CBMirAFBVV95cUxOM3JUbnJLUkh5SjQ3R3lZSEdGTVF6M0FGRlZITU44d1p5VXJCNDhsX0Q4Q2dudzA1dw?oc=5'">🔗 Rudaw Media Network</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  华为伊拉克电力ICT情报Agent · v12.7 · 2026-03-31<br>
+  数据：Google News · RSS · World Bank Iraq API · TendersInfo · 原始260条
+</div>
+
+</body>
+</html>
