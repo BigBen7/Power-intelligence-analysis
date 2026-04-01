@@ -49,6 +49,19 @@
 
   .sub-header { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 0 4px; border-bottom: 1px solid #eee; margin: 10px 0 8px; }
 
+  .legend { background: white; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); font-size: 12px; }
+  .legend-title { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+  .legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; color: #555; }
+  .legend-small { color: #777; font-size: 11px; }
+  .legend-sep { border-top: 1px solid #eee; margin: 8px 0; }
+  .dot-red { width: 8px; height: 8px; border-radius: 50%; background: #e74c3c; }
+  .dot-yellow { width: 8px; height: 8px; border-radius: 50%; background: #f39c12; }
+  .dot-blue { width: 8px; height: 8px; border-radius: 50%; background: #3498db; }
+  .dot-orange { width: 8px; height: 8px; border-radius: 50%; background: #e67e22; }
+  .dot-purple { width: 8px; height: 8px; border-radius: 50%; background: #8e44ad; }
+  .dot-gray { width: 8px; height: 8px; border-radius: 50%; background: #95a5a6; }
+
   .footer { text-align: center; font-size: 11px; color: #aaa; padding: 20px 0; }
   .footer a { color: #aaa; text-decoration: none; }
 </style>
@@ -59,7 +72,7 @@
   <div class="header">
     <div class="date">📅 2026年3月31日 星期二 UTC+3</div>
     <h1>伊拉克电力ICT每日情报</h1>
-    <div class="subtitle">Iraq Power &amp; ICT Daily Intelligence · v12.27 · BigBen7/Power-intelligence-analysis</div>
+    <div class="subtitle">Iraq Power &amp; ICT Daily Intelligence · v12.28 · BigBen7/Power-intelligence-analysis</div>
   </div>
 
   <div class="stats">
@@ -67,6 +80,32 @@
     <div class="stat s-yellow"><div class="stat-num">3</div><div class="stat-lbl">🟡 战略</div></div>
     <div class="stat s-orange"><div class="stat-num">1</div><div class="stat-lbl">🟠 友商</div></div>
     <div class="stat s-purple"><div class="stat-num">2</div><div class="stat-lbl">🟣 营商</div></div>
+  </div>
+
+  <!-- 情报分级图例 -->
+  <div class="legend">
+    <div class="legend-title">📊 情报分级说明</div>
+    <div class="legend-row">
+      <span class="legend-item"><span class="dot-red"></span>🔴警报 全国停电/断气/电网崩溃（1个月内）</span>
+      <span class="legend-item"><span class="dot-yellow"></span>🟡战略 内阁决议/百亿投资/跨境联网</span>
+    </div>
+    <div class="legend-row">
+      <span class="legend-item"><span class="dot-blue"></span>🔵战术 招标/项目/ICT升级改造</span>
+      <span class="legend-item"><span class="dot-orange"></span>🟠友商 竞争对手电力ICT布局</span>
+    </div>
+    <div class="legend-row">
+      <span class="legend-item"><span class="dot-purple"></span>🟣营商 付款拖欠/政治风险/战争影响</span>
+      <span class="legend-item"><span class="dot-gray"></span>⚪动态 一般行业动态</span>
+    </div>
+    <div class="legend-sep"></div>
+    <div class="legend-row legend-small">
+      <span>🔒来源：</span>
+      <span>A级=官方 B级=国际机构 C级=主流媒体 D级=行业平台 E级=社媒</span>
+    </div>
+    <div class="legend-row legend-small">
+      <span>📈置信度：</span>
+      <span>✅5-6高可信 ⚠️3-4存疑 ❌1-2低可信（E级来源默认⚠️）</span>
+    </div>
   </div>
 
   <!-- 🔴 警报 -->
@@ -169,7 +208,7 @@
 
 
   <div class="footer">
-    Iraq Power &amp; ICT Daily Intelligence · v12.27 · GitHub Pages<br>
+    Iraq Power &amp; ICT Daily Intelligence · v12.28 · GitHub Pages<br>
     <a href="https://BigBen7.github.io/Power-intelligence-analysis/">https://BigBen7.github.io/Power-intelligence-analysis/</a>
   </div>
 
