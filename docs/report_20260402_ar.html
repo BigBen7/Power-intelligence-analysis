@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الملخص اليومي لاستخبارات الكهرباء وتقنية المعلومات في العراق | 20260402</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f4f6f9; font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; color: #1a1a2e; }
+  .container { max-width: 680px; margin: 0 auto; padding: 16px 12px; }
+
+  .header { background: linear-gradient(135deg, #1a3a5c, #0d5c8a); color: white; border-radius: 16px; padding: 24px 20px; margin-bottom: 16px; }
+  .header .date { font-size: 13px; opacity: 0.85; margin-bottom: 6px; }
+  .header h1 { font-size: 20px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; }
+  .lang-switch { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; direction: ltr; background: rgba(255,255,255,0.12); padding: 8px 10px; border-radius: 999px; }
+  .lang-label { font-size: 12px; font-weight: 700; opacity: 0.92; }
+  .lang-switch a { color: white; text-decoration: none; font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid transparent; opacity: 0.8; }
+  .lang-switch a.active { opacity: 1; background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.32); }
+
+  .stats { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .stat { flex: 1; min-width: 60px; background: white; border-radius: 10px; padding: 10px 8px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .stat-num { font-size: 22px; font-weight: 800; }
+  .stat-lbl { font-size: 10px; color: #888; margin-top: 2px; }
+  .s-red .stat-num { color: #e74c3c; }
+  .s-yellow .stat-num { color: #f39c12; }
+  .s-blue .stat-num { color: #3498db; }
+  .s-orange .stat-num { color: #e67e22; }
+  .s-purple .stat-num { color: #8e44ad; }
+  .s-gray .stat-num { color: #95a5a6; }
+
+  .section-divider { display: flex; align-items: center; gap: 10px; margin: 20px 0 10px; }
+  .section-divider .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .section-divider .label { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+  .section-divider .count { font-size: 12px; color: #888; margin-left: auto; }
+
+  .card { background: white; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+  .card-red { border-left: 4px solid #e74c3c; }
+  .card-yellow { border-left: 4px solid #f39c12; }
+  .card-blue { border-left: 4px solid #3498db; }
+  .card-orange { border-left: 4px solid #e67e22; }
+  .card-purple { border-left: 4px solid #8e44ad; }
+  .card-gray { border-left: 4px solid #95a5a6; }
+
+  .card-date { font-size: 11px; color: #999; margin-bottom: 5px; }
+  .card-warn { font-size: 11px; color: #d39e00; margin-bottom: 4px; }
+  .card-title { font-size: 15px; font-weight: 600; color: #1a1a2e; line-height: 1.5; margin-bottom: 6px; }
+  .card-summary { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 8px; background: #f8f9fa; padding: 8px 10px; border-radius: 6px; }
+  .card-meta { font-size: 12px; color: #666; margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .card-link { font-size: 12px; color: #3498db; word-break: break-all; cursor: pointer; }
+  .card-link:hover { text-decoration: underline; }
+  .warn { display: inline-block; font-size: 10px; background: #fff3cd; color: #856404; border: 1px solid #ffeeba; padding: 1px 6px; border-radius: 4px; margin-inline-end: 4px; }
+
+  .legend { background: white; border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); font-size: 12px; }
+  .legend-title { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+  .legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; color: #555; }
+  .legend-small { color: #777; font-size: 11px; }
+  .legend-sep { border-top: 1px solid #eee; margin: 8px 0; }
+
+  .footer { text-align: center; font-size: 11px; color: #999; padding: 20px 0; }
+
+  html[dir='rtl'] body { font-family: Tahoma, 'Segoe UI', sans-serif; }
+  html[dir='rtl'] .header, html[dir='rtl'] .legend, html[dir='rtl'] .card { text-align: right; }
+  html[dir='rtl'] .section-divider .count { margin-left: 0; margin-right: auto; }
+  html[dir='rtl'] .legend-row, html[dir='rtl'] .card-meta { justify-content: flex-start; }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="date">📅 اليوم الخميس 2 أبريل 2026 UTC+3</div>
+    <h1>استخبارات الكهرباء وتقنية المعلومات في العراق</h1>
+    <div class="lang-switch"><span class="lang-label">Language</span><a class="" href="report_20260402.html">Chinese</a><a class="" href="report_20260402_en.html">English</a><a class="active" href="report_20260402_ar.html">Arabic</a></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat s-red"><div class="stat-num">1</div><div class="stat-lbl">🔴 إنذار</div></div>
+    <div class="stat s-yellow"><div class="stat-num">3</div><div class="stat-lbl">🟡 استراتيجي</div></div>
+    <div class="stat s-orange"><div class="stat-num">1</div><div class="stat-lbl">🟠 منافسون</div></div>
+    <div class="stat s-purple"><div class="stat-num">3</div><div class="stat-lbl">🟣 بيئة الأعمال</div></div>
+    <div class="stat s-gray"><div class="stat-num">6</div><div class="stat-lbl">⚪ ديناميكي</div></div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-title">📊 دليل مستويات الاستخبارات</div>
+    <div class="legend-row"><span class="legend-item">🔴 إنذار: انقطاع كهرباء وطني / انقطاع الغاز / انهيار الشبكة (خلال شهر واحد)</span><span class="legend-item">🟡 استراتيجي: قرارات مجلس الوزراء / استثمارات كبرى / ربط كهربائي عابر للحدود</span></div>
+    <div class="legend-row"><span class="legend-item">🔵 تكتيكي: مناقصات / مشاريع / تحديث وترقية ICT</span><span class="legend-item">🟠 منافسون: تحركات المنافسين في ICT للطاقة</span></div>
+    <div class="legend-row"><span class="legend-item">🟣 بيئة الأعمال: تأخر المدفوعات / مخاطر سياسية / أثر الحرب</span><span class="legend-item">⚪ ديناميكي: تطورات قطاعية عامة</span></div>
+    <div class="legend-sep"></div>
+    <div class="legend-row legend-small">
+      <span>🔒المصدر:</span>
+      <span>A=رسمي B=منظمة دولية C=إعلام رئيسي D=منصة متخصصة E=وسائل تواصل اجتماعي</span>
+    </div>
+    <div class="legend-row legend-small">
+      <span>📈الموثوقية:</span>
+      <span>✅5-6 مرتفعة ⚠️3-4 متوسطة ❌1-2 منخفضة (المصدر E افتراضياً ⚠️)</span>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <span class="dot" style="background:#e74c3c"></span>
+    <span class="label">🔴 إنذار</span>
+    <span class="count">1 عنصر</span>
+  </div>
+
+  <div class="card card-red">
+    <div class="card-date">2026-03-04 🔴 إنذار</div>
+    <div class="card-title">العراق يعلن انقطاع التيار الكهربائي على مستوى البلاد، وجهود الترميم جارية - الأناضول أجانسي</div>
+    <div class="card-summary">وأعلنت وزارة الطاقة الكهربائية العراقية، في 4 مارس 2026، عن توقف شبكة الكهرباء الوطنية عن العمل بشكل كامل في جميع المحافظات. ولا يزال السبب قيد التحقيق وبدأت أعمال الترميم.</div>
+    <div class="card-meta">
+      📍على الصعيد الوطني 🏷️تعتيم 🔒الفئة B ✅ موثوقية 5
+    </div>
+    <div class="card-link" onclick="window.open('https://www.anews.com.tr/middle-east/2026/03/04/iraq-announces-nationwide-power-outage-restoration-efforts-underway', '_blank')">📎 anews.com.tr →</div>
+  </div>
+
+  <div class="section-divider">
+    <span class="dot" style="background:#f39c12"></span>
+    <span class="label">🟡 استراتيجي</span>
+    <span class="count">3 عناصر</span>
+  </div>
+
+  <div class="card card-yellow">
+    <div class="card-date">2026-02-16 🟡 استراتيجي</div>
+    <div class="card-title">WorldLink: كابل بحري بقيمة 700 مليون دولار يربط بين أوروبا والشرق الأوسط - Data Center Dynamics</div>
+    <div class="card-summary">في 16 فبراير 2026، أعلنت شركة WorldLink عن إنشاء ممر رقمي يربط بين أوروبا والشرق الأوسط وآسيا، يجمع بين الألياف الضوئية البحرية والأرضية، بهدف التخفيف من ازدحام الطرق الدولية وتعزيز مكانة مركز الربط البيني في الشرق الأوسط.</div>
+    <div class="card-meta">
+      📍الشرق الأوسط 🏷️الاتصالات البصرية/الكابل البصري البحري 🏢WorldLink 🔒الفئة C ✅ موثوقية 4
+    </div>
+    <div class="card-link" onclick="window.open('https://capacityglobal.com/news/worldlink-announces-high-capacity-digital-corridor-between-europe-middle-east-and-asia/', '_blank')">📎 capacityglobal.com →</div>
+  </div>
+
+  <div class="card card-yellow">
+    <div class="card-date">2026-02-11 🟡 استراتيجي</div>
+    <div class="card-title">العراق يحقق تقدما سريعا في مشروع الربط الكهربائي بين دول مجلس التعاون الخليجي - اخبار العراق</div>
+    <div class="card-summary">في 11 فبراير 2026، تم الانتهاء من مشروع الربط الكهربائي بين العراق ودول مجلس التعاون الخليجي بنسبة 94٪ تقريبًا. ومن المخطط نقل 500 ميغاواط من الكهرباء من الوفرة في الكويت إلى البصرة، والمشروع على وشك الدخول حيز التنفيذ.</div>
+    <div class="card-meta">
+      📍البصرة 🏷️نقل الطاقة ذات الجهد العالي 🔒الفئة C ✅ موثوقية 4
+    </div>
+    <div class="card-link" onclick="window.open('https://www.agbi.com/energy/2026/02/iraq-to-sign-electricity-supply-deal-with-gcc/', '_blank')">📎 agbi.com →</div>
+  </div>
+
+  <div class="card card-yellow">
+    <div class="card-date">2026-02-02 🟡 استراتيجي</div>
+    <div class="card-title">Iraq orders ministries to adopt solar power - شفق نيوز</div>
+    <div class="card-summary">في 2 فبراير 2026، طلبت الحكومة العراقية من الوزارات والشركات المملوكة للدولة تركيب أنظمة الطاقة الشمسية لتقليل الضغط على الشبكة الوطنية، وأطلقت دعمًا تمويليًا منخفض الفائدة للسكان.</div>
+    <div class="card-meta">
+      📍على الصعيد الوطني 🏷️طاقة شمسية 🔒الفئة B ✅ موثوقية 5
+    </div>
+    <div class="card-link" onclick="window.open('https://shafaq.com/en/society/Iraq-orders-ministries-to-adopt-solar-power', '_blank')">📎 shafaq.com →</div>
+  </div>
+
+
+  <div class="section-divider">
+    <span class="dot" style="background:#e67e22"></span>
+    <span class="label">🟠 منافسون</span>
+    <span class="count">1 عنصر</span>
+  </div>
+
+  <div class="card card-orange">
+    <div class="card-date">2025-10-22 🟠 منافسون</div>
+    <div class="card-title">شركة GBI تختار شركة Nokia لبناء شبكة جديدة في الشرق الأوسط - تطوير الاتصالات</div>
+    <div class="card-summary">في 22 تشرين الأول (أكتوبر) 2025، اختارت شركة GBI شركة Nokia لبناء شبكة ألياف ضوئية أرضية عالية السعة في جميع أنحاء العراق، مما يوفر قدرة توصيل تزيد عن 50 تيرابايت في الثانية ويعمل كامتداد أرضي للكابلات البحرية.</div>
+    <div class="card-meta">
+      📍العراق 🏷️الاتصالات البصرية/شبكة الألياف الضوئية 🏢Nokia 🔒الفئة C ✅ موثوقية 5
+    </div>
+    <div class="card-link" onclick="window.open('https://developingtelecoms.com/telecom-technology/optical-fixed-networks/19230-gbi-selects-nokia-to-build-new-middle-east-network.html', '_blank')">📎 developingtelecoms.com →</div>
+  </div>
+
+  <div class="section-divider">
+    <span class="dot" style="background:#8e44ad"></span>
+    <span class="label">🟣 بيئة الأعمال</span>
+    <span class="count">3 عناصر</span>
+  </div>
+
+  <div class="card card-purple">
+    <div class="card-date">2026-03-27 🟣 بيئة الأعمال</div>
+    <div class="card-title">التقرير الخاص المحدث لإيران، 25 مارس/آذار 2026 – فهم الحرب.org</div>
+    <div class="card-summary">وأشار التقرير الخاص الصادر في 27 مارس 2026 إلى الهجمات على أهداف مسلحة ذات صلة في محافظتي الأنبار وصلاح الدين بالعراق، والتي شملت تقنيات مثل الطائرات بدون طيار الموجهة بالألياف الضوئية، مما يعكس التأثير غير المباشر للوضع الأمني ​​الإقليمي على بيئة البنية التحتية لتكنولوجيا المعلومات والاتصالات.</div>
+    <div class="card-meta">
+      📍محافظة الأنبار، محافظة صلاح الدين 🏷️الألياف الضوئية/بدون طيار 🔒الفئة C ✅ موثوقية 4
+    </div>
+    <div class="card-link" onclick="window.open('https://eurasia.ro/2026/03/27/iran-update-special-report-march-25-2026/', '_blank')">📎 eurasia.ro →</div>
+  </div>
+
+  <div class="card card-purple">
+    <div class="card-date">2026-03-06 🟣 بيئة الأعمال</div>
+    <div class="card-title">الصراع الإيراني يعرض مراكز البيانات العالمية للخطر - شبكة شرسة</div>
+    <div class="card-summary">في 6 مارس 2026، أفيد أن الصراعات المتعلقة بإيران قد شكلت مخاطر على أمن مراكز البيانات في الشرق الأوسط، وأصبحت البنية التحتية السحابية مثل AWS هدفًا محتملاً، مما يعكس الضعف المتزايد للبنية التحتية الإقليمية لتكنولوجيا المعلومات والاتصالات.</div>
+    <div class="card-meta">
+      📍الشرق الأوسط 🏷️مركز البيانات/الحوسبة السحابية 🏢AWS 🔒الفئة B ✅ موثوقية 5
+    </div>
+    <div class="card-link" onclick="window.open('https://www.cnbc.com/2026/03/06/iran-war-data-centers.html', '_blank')">📎 cnbc.com →</div>
+  </div>
+
+  <div class="card card-purple">
+    <div class="card-date">2025-10-31 🟣 بيئة الأعمال</div>
+    <div class="card-title">انقطاع الكهرباء المزمن واتهامات الفساد يغذي اليأس في وسط وجنوب العراق - كردستان24</div>
+    <div class="card-summary">في 31 تشرين الأول/أكتوبر 2025، أفادت صحيفة كردستان 24 أن انقطاع التيار الكهربائي طويل الأمد في وسط وجنوب العراق تفاقم بسبب اتهامات بالفساد، وأن الاستياء الاجتماعي لا يزال يتفاقم، مما يعكس المخاطر في إدارة السلطة وبيئة الأعمال.</div>
+    <div class="card-meta">
+      📍العراق 🏷️فشل الطاقة/فساد 🔒الفئة B ⚠️ موثوقية 3
+    </div>
+    <div class="card-link" onclick="window.open('https://www.kurdistan24.net/en/story/872615', '_blank')">📎 kurdistan24.net →</div>
+  </div>
+
+  <div class="section-divider">
+    <span class="dot" style="background:#95a5a6"></span>
+    <span class="label">⚪ ديناميكي</span>
+    <span class="count">6 عناصر</span>
+  </div>
+
+  <div class="card card-gray">
+    <div class="card-date">2026-04-02 ⚪ ديناميكي</div>
+    <div class="card-title">أبو محمد الكعبي: مقترح دمج الإدارة الإلكترونية وإدارة الرواتب وأنظمة المخزون في وزارة الكهرباء [الترجمة العربية]</div>
+    <div class="card-summary">وأوصى المنشور وزارة الطاقة الكهربائية بتعزيز الحوكمة الإلكترونية ودمج أنظمة إدارة الرواتب وإدارة المخزون لتقليل العمليات وزيادة الشفافية وتحسين تجربة استفسار الموظفين، مما يعكس الطلب على بناء منصة رقمية داخلية.</div>
+    <div class="card-meta">
+      📍العراق 🏷️الحكومة الإلكترونية/منصة رقمية 🔒الفئة E ⚠️ موثوقية 3
+    </div>
+    <div class="card-link" onclick="window.open('https://www.facebook.com/moeministry/posts/pfbid0Ua9Eop83X9RnRiuNRjq5iDrAiTLZorqi1UCzkQYZeopwnmotn8pm4zpaumQLbS5cl', '_blank')">📎 facebook.com →</div>
+  </div>
+
+  <div class="card card-gray">
+    <div class="card-date">2026-04-02 ⚪ ديناميكي</div>
+    <div class="card-title">ريم سان: الناصرية انقطعت عن الكهرباء لمدة 6 ساعات وتم تزويدها بالكهرباء لمدة ساعة واحدة فقط [الترجمة العربية]</div>
+    <div class="card-summary">وذكر المنشور أن انقطاع التيار الكهربائي لمدة 6 ساعات وانقطاع التيار الكهربائي لمدة ساعة أمر شائع حاليا في الناصرية. أعرب المستخدمون عن استيائهم الشديد من استمرار انخفاض موثوقية مصدر الطاقة في تناقضات شديدة.</div>
+    <div class="card-meta">
+      📍الناصرية 🏷️فشل الطاقة/توزيع الطاقة 🔒الفئة E ❌ موثوقية 2
+    </div>
+    <div class="card-link" onclick="window.open('https://www.facebook.com/moeministry/posts/pfbid0pCsoK2k5daNecPVkv3kLVEtzA4zmjTqpGDQ2ZXtFeNvV7qUjysrtqyARGhvSdaEil', '_blank')">📎 facebook.com →</div>
+  </div>
+
+  <div class="card card-gray">
+    <div class="card-date">2026-04-01 ⚪ ديناميكي</div>
+    <div class="card-title">المهندس أنيس: انقطاع التيار الكهربائي عن الديوانية أكثر من 17 ساعة ليومين متتاليين [ترجمة عربية]</div>
+    <div class="card-summary">وذكر المنشور أن منطقة الديوانية الحضرية انقطعت عنها الكهرباء لأكثر من 17 ساعة اليوم وأمس، بمتوسط ​​حوالي 7 ساعات فقط من التيار الكهربائي يوميا، وتساءل عما إذا كانت هذه ظاهرة محلية قبل الشحن نهاية الشهر أم فشل نظامي.</div>
+    <div class="card-meta">
+      📍الديوانية 🏷️فشل الطاقة/توزيع الطاقة 🔒الفئة E ⚠️ موثوقية 3
+    </div>
+    <div class="card-link" onclick="window.open('https://www.facebook.com/moeministry/posts/pfbid02wcHm2hTkYnWXxRMYkVfn6vCVVWnscKY5M1aTSr7RVCFnbN2P7nvs3h16oHbLWM32l', '_blank')">📎 facebook.com →</div>
+  </div>
+
+  <div class="card card-gray">
+    <div class="card-date">2026-04-01 ⚪ ديناميكي</div>
+    <div class="card-title">عبد الحسين حامد: معضلة الطاقة في العراق نابعة من الاعتماد على الغاز وارتفاع الطلب [الترجمة العربية]</div>
+    <div class="card-summary">يعتقد منشور يدعي أنه ممارس في نظام الطاقة أن نمو الطلب، والوصلات غير القانونية واعتماد محطات توليد الطاقة بالغاز على الغاز الطبيعي الإيراني هي الأسباب الرئيسية لصعوبة تحسين إمدادات الطاقة، ويقترح استخدام الغاز المرتبط بحقول النفط والخلايا الكهروضوئية الصحراوية لتخفيف الضغط.</div>
+    <div class="card-meta">
+      📍النجف 🏷️توليد الطاقة بالغاز الطبيعي/طاقة شمسية 🔒الفئة E ⚠️ موثوقية 3
+    </div>
+    <div class="card-link" onclick="window.open('https://www.facebook.com/moeministry/posts/pfbid0qtqZgpjvNxVytUMxrTpGbbRkvFFwL8SynHnavCJrzSoobQxPknHmFuczLrYL5TDyl', '_blank')">📎 facebook.com →</div>
+  </div>
+
+  <div class="card card-gray">
+    <div class="card-date">2026-03-30 ⚪ ديناميكي</div>
+    <div class="card-title">علي حسين يسري: شمال الفلوجة يعزز شبكة توزيع الكهرباء مسبقا لذروة الصيف [الترجمة العربية]</div>
+    <div class="card-summary">وذكر المنشور أن المركز الاعلامي لوزارة الطاقة كشف عن قيام دائرة توزيع كهرباء شمال الفلوجة بتنفيذ نصب أعمدة الجهد العالي والمنخفض ومد الخطوط وتشغيل محولة سعة 400 في شرق الانبار لتحويل الاحمال وتحسين استقرار التيار الكهربائي.</div>
+    <div class="card-meta">
+      📍الأنبار شمال الفلوجة 🏷️تحويل النقل والتوزيع/محول 🔒الفئة E ⚠️ موثوقية 3
+    </div>
+    <div class="card-link" onclick="window.open('https://www.facebook.com/moeministry/posts/pfbid0LjwMivBNRxU25oR3oPvDmwP8ouJqxXNqxR7fNPoG913QaXgj9kcTjD6DLaH6fwDWl', '_blank')">📎 facebook.com →</div>
+  </div>
+
+  <div class="card card-gray">
+    <div class="card-date">2026-03-30 ⚪ ديناميكي</div>
+    <div class="card-title">عوادي سفير: الانقطاع المتكرر للتيار الكهربائي في منطقة الدورة ببغداد نهاية الشهر أدى إلى ارتفاع تكاليف المولدات [Arabic Translation]</div>
+    <div class="card-summary">وأفاد المنشور، أن التيار الكهربائي في حي 846 ببغداد، غير مستقر منذ أيام عديدة، خاصة في نهاية الشهر وبداية الشهر. كما ذكرت أن رسوم المولدات الخاصة ارتفعت إلى 20 ألف دينار لكل أمبير، ويشتبه السكان في وجود صلة بين إمدادات الطاقة ورسوم المولدات.</div>
+    <div class="card-meta">
+      📍دورة بغداد 🏷️فشل الطاقة/دينامو 🔒الفئة E ❌ موثوقية 2
+    </div>
+    <div class="card-link" onclick="window.open('https://www.facebook.com/moeministry/posts/pfbid0hCcdH78U6YrBJF3GwMVaoGxScQGnjALkTsotTMbwbqnJRxWzpMK2T53RgGn4HFNMl', '_blank')">📎 facebook.com →</div>
+  </div>
+
+  <div class="footer">الملخص اليومي لاستخبارات الكهرباء وتقنية المعلومات في العراق</div>
+</div>
+</body>
+</html>
